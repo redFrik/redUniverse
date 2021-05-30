@@ -38,6 +38,15 @@ a link::Classes/Rect:: that define window size and position
 argument::background
 a link::Classes/Color::
 
+METHOD:: plot
+Creates a link::Classes/Window:: and an link::Classes/Image::. Also mainly for testing.
+
+argument::width
+in pixels
+
+argument::height
+in pixels
+
 METHOD:: drawFunc
 
 METHOD:: matrices
@@ -125,5 +134,17 @@ u.drawFunc= {
 };
 u.animate= true;
 w.front;
+)
+
+//--plot random matrix- run multiple times
+(
+var width= 640, height= 480;
+var m= #[
+	[0, 0.5, -0.5, 0, -0.75, 0.75],
+	[0, 0.5, -0.5, 0, -0.75, 0.75],
+	[0, 0.5, -0.5, 0, -0.75, 0.75]
+].collect{|x| x.collect{|y| y.gauss(0.2)}}.postln;
+var a= RedIFS(nil, m, 200000, 100);
+a.plot(width, height);
 )
 ::
