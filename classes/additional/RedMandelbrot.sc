@@ -1,9 +1,9 @@
 // this file is part of redUniverse /redFrik
 
 RedMandelbrot {
-	var <>width, <>height, <>thresh, <>maxIterations, <>colorFunc;
-	*new {|width= 320, height= 240, thresh= 1, maxIterations= 500, colorFunc|
-		^super.newCopyArgs(width, height, thresh, maxIterations, colorFunc);
+	var <>width, <>height, <>thresh, <>maxIterations;
+	*new {|width= 320, height= 240, thresh= 1, maxIterations= 500|
+		^super.newCopyArgs(width, height, thresh, maxIterations);
 	}
 	at {|x, y, zoom|
 		var x0= x.linlin(0, width-1, zoom.left, zoom.right);
@@ -19,7 +19,7 @@ RedMandelbrot {
 		});
 		^iterations;
 	}
-	plot {|zoom, bounds, background, interpolation= \smooth|
+	plot {|zoom, bounds, colorFunc, background, interpolation= \smooth|
 		var z= zoom ?? {Rect(-2.5, -1, 3.5, 2)};
 		var b= bounds ?? {Rect(100, 200, width, height)};
 		var win= Window(this.class.name, b);
