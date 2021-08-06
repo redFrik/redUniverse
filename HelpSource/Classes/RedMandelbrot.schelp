@@ -1,0 +1,68 @@
+CLASS:: RedMandelbrot
+SUMMARY:: mandelbrot fractal
+CATEGORIES:: Red>redUniverse>additional
+RELATED:: Classes/RedMRCM, Classes/RedIFS
+
+DESCRIPTION::
+Plotting a fractal with link::Classes/Image::.
+
+CLASSMETHODS::
+
+METHOD:: new
+
+ARGUMENT:: width
+Resolution in X dimension.
+
+ARGUMENT:: height
+Resolution in Y dimension.
+
+ARGUMENT:: thresh
+A threshold greater than code::0:: and lower than code::maxIterations::.
+
+ARGUMENT:: maxIterations
+The higher the value, the longer each pixel calculation will take.
+
+ARGUMENT:: colorFunc
+A link::Classes/Function:: for colourising pixels with an iteration count greater than the threshold. It is passed two link::Classes/Integer:: arguments (code::iterations:: and code::maxIterations::) that should be used and return a link::Classes/Color:: instance. Leave as code::nil:: for the default.
+
+
+INSTANCEMETHODS::
+
+METHOD:: plot
+Creates a link::Classes/Window:: and an link::Classes/Image::. Also mainly for testing.
+
+argument::zoom
+A link::Classes/Rect:: specifying zoom level. The default is code::Rect(-2.5, -1, 3.5, 2)::.
+
+argument::bounds
+A link::Classes/Rect:: specifying the plot window size and position.
+
+argument::background
+A background link::Classes/Color:: for the link::Classes/Image::. Visible with a threshold > 1.
+
+argument::interpolation
+Can be code::\fast:: or code::\smooth::.
+
+EXAMPLES::
+
+CODE::
+RedMandelbrot().plot;
+
+RedMandelbrot().plot(Rect(0.25, -0.1, 0.2, 0.2));  //zoom in
+
+RedMandelbrot(thresh:4).plot(background:Color.blue);
+
+//custom colouring function
+(
+RedMandelbrot(800, 600, colorFunc: {|iterations, max|
+	Color.grey(iterations.lincurve(0, max, 0, 1, -25));
+}).plot(bounds: Rect(100, 100, 800, 600), interpolation: \fast);
+)
+
+//access
+a= RedMandelbrot(100, 100);
+a.at(10, 10, Rect(-2.5, -1, 3.5, 2));
+a.at(99, 99, Rect(-2.5, -1, 3.5, 2));
+a.at(50, 50, Rect(-2.5, -1, 3.5, 2));  //center
+a.plot;
+::

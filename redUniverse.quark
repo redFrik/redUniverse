@@ -4,7 +4,8 @@
 	\summary:	"a simple toolkit for sonification and visualisation of dynamic systems",
 	\author:		"redFrik",
 	\helpdoc:		"redUniverseExamplesOverview.html",
-	\url:			"http://www.fredrikolofsson.com/",
-	\version:		1.5,
+	\url:			"https://www.fredrikolofsson.com/",
+	\version:		1.6,
+	\since:			"2006",
 	\isCompatible:	{Main.versionAtLeast(3,6)}
 )

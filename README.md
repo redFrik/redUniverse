@@ -12,6 +12,7 @@ more info in the [lam06-handout.pdf](lam06-handout.pdf)
 
 ## changelog:
 
+* 210806 - added RedMandelbrot class
 * 210521 - minor optimisation for drawing 3d
 * 200202 - added a discrete grow lsystem example
 * 200131 - added lsystem grow example

@@ -1,7 +1,7 @@
 CLASS:: RedMRCM
 SUMMARY:: multiple reduction copy machine
 CATEGORIES:: Red>redUniverse>additional
-RELATED:: Classes/RedLTurtle, Classes/RedIFS
+RELATED:: Classes/RedLTurtle, Classes/RedIFS, Classes/RedMandelbrot
 
 DESCRIPTION::
 Plotting with link::Classes/Pen::. After Flake - "The Computational Beauty of Nature".

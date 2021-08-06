@@ -90,5 +90,5 @@ table::
 ## link::Classes/RedVector2D::, link::Classes/RedVector3D:: || optimised vector objects of specific dimensions
 ## link::Classes/RedSpring:: || helper class for keeping track of springs
 ## link::Classes/RedUniverse::, link::Classes/RedWorld::, link::Classes/RedObject::, link::Classes/RedPendulum::, link::Classes/RedAgent::, link::Classes/RedHiddenObject::, link::Classes/RedFood::, link::Classes/RedRock::, link::Classes/RedBoid::, link::Classes/RedParticle:: || fundamental objects in the redUniverse toolkit
-## link::Classes/RedLSystem::, link::Classes/RedLTurtle::, link::Classes/RedFingerprint::, link::Classes/RedMRCM::, link::Classes/RedIFS::, link::Classes/RedPerlin::, link::Classes/RedKMeans:: || additional classes
+## link::Classes/RedLSystem::, link::Classes/RedLTurtle::, link::Classes/RedFingerprint::, link::Classes/RedMRCM::, link::Classes/RedIFS::, link::Classes/RedMandelbrot::, link::Classes/RedPerlin::, link::Classes/RedKMeans:: || additional classes
 ::

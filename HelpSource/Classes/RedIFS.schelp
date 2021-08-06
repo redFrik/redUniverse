@@ -1,7 +1,7 @@
 CLASS:: RedIFS
 SUMMARY:: iterated function system
 CATEGORIES:: Red>redUniverse>additional
-RELATED:: Classes/RedMRCM, Classes/RedLTurtle
+RELATED:: Classes/RedMRCM, Classes/RedLTurtle, Classes/RedMandelbrot
 
 DESCRIPTION::
 Plotting with link::Classes/Pen::. After Flake - "The Computational Beauty of Nature".
