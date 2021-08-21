@@ -81,23 +81,25 @@ r= Routine{
 	a= RedPerlin.new;
 	8.do{|wy|
 		8.do{|wx|
-			var w, u;
+			var w, i;
 			persistance= 0.1*wx+0.25;
 			octaves= 1*wy+2;
 			[\persistance, persistance, \octaves, octaves].postln;
 			w= Window("p"++persistance+"o"++octaves, Rect(width*wx+128, height*wy+64, width, height), false, false);
-			u= UserView(w, Rect(0, 0, w.bounds.width, w.bounds.height));
-			u.background= Color.black;
-			u.drawFunc= {
+			i= Image(width, height);
+			w.drawFunc= {
 				height.do{|y|
 					width.do{|x|
-						Pen.strokeColor= Color.grey(a.noise2D(x/width, y/height, persistance, octaves));
-						Pen.strokeRect(Rect.aboutPoint(Point(x, y), 1, 1));
+						var noise= a.noise2D(x/width, y/height, persistance, octaves);
+						var c= Color.grey(noise.lincurve(-0.5, 0.5, 0, 1, 2));
+						i.setPixel(Image.colorToPixel(c), x, y);
 					};
 				};
+				Pen.drawImage(Rect(0, 0, width, height), i);
 			};
 			w.front;
 			ws= ws.add(w);
+			w.onClose= {i.free};
 			0.01.wait;
 		};
 	};
@@ -108,29 +110,26 @@ CmdPeriod.doOnce{ws.do{|w| w.close}};
 
 //--3d pen test (3rd dimension is time)
 (
-var width= 50, height= 50, frames= 50, w, u, a, r, persistance= 0.85, octaves= 4;
+var width= 50, height= 50, speed= 50, z= 0, w, i, a, r, persistance= 0.85, octaves= 4;
 var scale= 3;
 w= Window("perlin test 3d", Rect(128, 64, width*scale, height*scale), false);
-u= UserView(w, Rect(0, 0, width*scale, height*scale));
-u.background= Color.black;
-r= Routine{
-	a= RedPerlin.new;
-	a.spook= 12;
-	frames.do{|z|
-		(1/25).wait;
-		("frame:"+z).postln;
-		u.refresh;
-		u.drawFunc= {
-			height.do{|y|
-				width.do{|x|
-					Pen.strokeColor= Color.grey(a.noise3D(x/width, y/height, z/frames, persistance, octaves, 0));
-					Pen.strokeRect(Rect.aboutPoint(Point(x, y)*scale, scale, scale));
-				};
-			};
+i= Image(width, height).interpolation_(\fast);  //or \smooth
+a= RedPerlin.new;
+a.spook= 12;
+w.drawFunc= {
+	("frame:"+z).postln;
+	height.do{|y|
+		width.do{|x|
+			var noise= a.noise3D(x/width, y/height, z/speed, persistance, octaves, 0);
+			var c= Color.grey(noise.lincurve(-0.5, 0.5, 0, 1, 2));
+			i.setPixel(Image.colorToPixel(c), x, y);
 		};
 	};
+	Pen.drawImage(Rect(0, 0, width*scale, height*scale), i);
+	z= z+1;
 };
+Routine({while({w.isClosed.not}, {w.refresh; (1/25).wait})}).play(AppClock);
 w.front;
-r.play(AppClock);
+w.onClose= {i.free};
 )
 ::
