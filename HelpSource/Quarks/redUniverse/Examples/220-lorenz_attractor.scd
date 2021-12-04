@@ -15,8 +15,8 @@ obj= RedObject(world, RedVector3D[1, 1, 1], size: 1);
 
 ~order= [0, 1, 2];
 ~sigma= 10;
-~beta= 28;
-~rho= 8/3;
+~rho= 28;
+~beta= 8/3;
 
 lorenz= {|vec, s= 10, r= 28, b= (8/3)|
 	RedVector3D[
@@ -28,7 +28,7 @@ lorenz= {|vec, s= 10, r= 28, b= (8/3)|
 
 //--loop
 w.draw{
-	obj.vel= lorenz.value(obj.loc, ~sigma, ~beta, ~rho);
+	obj.vel= lorenz.value(obj.loc, ~sigma, ~rho, ~beta);
 	obj.update;
 
 	//--render
@@ -52,9 +52,9 @@ CmdPeriod.doOnce({w.close});
 ~sigma= 10;
 ~sigma= 30;
 ~win.clear;
-~beta= 40
-~beta= 100
-~beta= 28
+~rho= 40
+~rho= 100
+~rho= 28
 ~win.clear;
-~rho= 2.23
-~rho= 8/3
+~beta= 2.23
+~beta= 8/3
