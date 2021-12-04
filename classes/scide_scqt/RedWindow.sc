@@ -50,4 +50,7 @@ RedWindow : Window {
 	frameRate {
 		^userView.frameRate;
 	}
+	clear {
+		userView.clearDrawing;
+	}
 }

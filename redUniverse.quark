@@ -5,7 +5,7 @@
 	\author:		"redFrik",
 	\helpdoc:		"redUniverseExamplesOverview.html",
 	\url:			"https://www.fredrikolofsson.com/",
-	\version:		1.6,
+	\version:		1.61,
 	\since:			"2006",
 	\isCompatible:	{Main.versionAtLeast(3,6)}
 )

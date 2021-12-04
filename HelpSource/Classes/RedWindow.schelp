@@ -46,6 +46,9 @@ Current frame.
 METHOD:: frameRate
 Current average framerate.
 
+METHOD:: clear
+Clear the internal link::Classes/UserView:: once. Useful when drawing with the clearOnRefresh flag set to false.
+
 EXAMPLES::
 
 CODE::
