@@ -70,7 +70,7 @@ w.draw{
 		if(cnt>0, {
 			cnt= cnt-1;
 		}, {
-			w.userView.clearDrawing;  //clear each generation
+			w.clearDrawing;  //clear each generation
 			Pen.translate(lplot.initTranslate.x*width, lplot.initTranslate.y*height);
 			Pen.rotate(lplot.initAngle);
 			matrix= Pen.matrix.as(Array);
@@ -97,7 +97,7 @@ w.draw{
 		matrix= Pen.matrix.as(Array);
 	});
 };
-w.userView.clearOnRefresh= false;
+w.clearOnRefresh= false;
 w.play(fps);
 CmdPeriod.doOnce({w.close});
 )

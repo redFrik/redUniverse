@@ -6,7 +6,7 @@ var width= 640, height= 480, w, wgrav, world, n= 12;
 
 //--world
 w= RedWindow("attractor test4", Rect(128, 64, width, height)).front;
-w.userView.clearOnRefresh= false;
+w.clearOnRefresh= false;
 wgrav= RedVector2D[0, 0.98];
 world= RedWorld(RedVector2D[width, height], wgrav, 5, 1);	//dim,grav,maxvel,damp
 

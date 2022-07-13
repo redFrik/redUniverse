@@ -6,8 +6,6 @@ wx= width/n, hy= height/n;
 
 //--world
 w= RedWindow("discrete world - 2d ca", Rect(128, 64, width, height)).front;
-w.userView.clearOnRefresh= true;
-w.background= Color.black;
 world= RedWorld3(RedVector[wx, hy]);	//dim,grav,maxvel,damp
 
 //--objects

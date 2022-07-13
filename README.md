@@ -12,6 +12,7 @@ more info in the [lam06-handout.pdf](lam06-handout.pdf)
 
 ## changelog:
 
+* 220713 - refactor RedWindow once again and move out of scide_scqt folder
 * 211204 - added Lorenz attractor example and clear method for RedWindow
 * 210806 - added RedMandelbrot class
 * 210521 - minor optimisation for drawing 3d

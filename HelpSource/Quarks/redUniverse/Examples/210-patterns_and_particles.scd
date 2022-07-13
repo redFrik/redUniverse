@@ -5,7 +5,6 @@ var width= 640, height= 480, w, wgrav, world;
 
 //--world
 w= RedWindow("patterns and particles", Rect(128, 64, width, height)).front;
-w.userView.clearOnRefresh= true;
 w.background= Color.white;
 wgrav= RedVector2D[0, 0.98];
 world= RedWorld(RedVector[width, height], wgrav, 30, 0.1);	//dim,grav,maxvel,damp

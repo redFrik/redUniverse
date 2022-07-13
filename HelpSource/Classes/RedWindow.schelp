@@ -1,10 +1,20 @@
 CLASS:: RedWindow
-SUMMARY:: wrapper for Window
+SUMMARY:: wrapper for UserView
 CATEGORIES:: Red>redUniverse
 RELATED:: Overviews/redUniverseExamplesOverview
 
 DESCRIPTION::
-Adding some functionality to the standard link::Classes/Window:: class. Requires link::Classes/RedVector::.
+Convenience class. Replaces link::Classes/Window:: + link::Classes/UserView::. Requires link::Classes/RedVector::.
+
+CLASSMETHODS::
+
+METHOD:: new
+
+ARGUMENT:: name
+Window title.
+
+ARGUMENT:: bounds
+Window position and size.
 
 INSTANCEMETHODS::
 
@@ -22,9 +32,6 @@ Stop internal thread.
 METHOD:: resize
 Change window size while keeping x and y position. The argument can also be a link::Classes/RedVector::
 
-METHOD:: background
-Set window background. Alias for view.background_
-
 METHOD:: isOpen
 Boolean.
 
@@ -34,20 +41,8 @@ Returns a link::Classes/RedVector:: for mouse x and y position. Click&drag in wi
 METHOD:: isPlaying
 If the window is updating.
 
-METHOD:: userView
-Access to the embedded view.
-
-METHOD:: animate
-Start automatic refresh. Default at 60fps (although swingosc seems capped at 50).
-
-METHOD:: frame
-Current frame.
-
-METHOD:: frameRate
-Current average framerate.
-
 METHOD:: clear
-Clear the internal link::Classes/UserView:: once. Useful when drawing with the clearOnRefresh flag set to false.
+Clear the internal link::Classes/UserView:: once. Useful when drawing with the code::clearOnRefresh:: flag set to false.
 
 EXAMPLES::
 

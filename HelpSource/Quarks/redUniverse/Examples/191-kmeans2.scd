@@ -7,8 +7,6 @@ kmeans;
 
 //--world
 w= RedWindow("k-means2", Rect(128, 64, width, height)).front;
-w.userView.clearOnRefresh= true;
-w.background= Color.black;
 wgrav= RedVector2D[0, 0];
 world= RedWorld3(RedVector2D[width, height], wgrav, 20, 0);	//dim,grav,maxvel,damp
 

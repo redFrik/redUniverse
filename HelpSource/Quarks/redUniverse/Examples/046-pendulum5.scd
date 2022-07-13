@@ -6,8 +6,7 @@ ypos;
 
 //--world
 w= RedWindow("pendulum test5", Rect(128, 64, width, height)).front;
-w.userView.clearOnRefresh= false;
-
+w.clearOnRefresh= false;
 wgrav= RedVector2D[0, 0];
 world= RedWorld(RedVector2D[width, height], wgrav, 20, 0.001);	//dim,grav,maxvel,damp
 

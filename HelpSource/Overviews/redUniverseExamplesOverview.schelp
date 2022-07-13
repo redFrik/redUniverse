@@ -86,7 +86,7 @@ list::
 ::
 
 table::
-## link::Classes/RedWindow:: || wrapper for link::Classes/Window::
+## link::Classes/RedWindow:: || wrapper for UserView. Convenience class that replaces link::Classes/Window:: + link::Classes/UserView::
 ## link::Classes/RedVector:: || vector of any dimension
 ## link::Classes/RedVector2D::, link::Classes/RedVector3D:: || optimised vector objects of specific dimensions
 ## link::Classes/RedSpring:: || helper class for keeping track of springs

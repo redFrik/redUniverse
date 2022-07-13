@@ -6,9 +6,7 @@ var lorenz;
 
 //--world
 w= RedWindow("lorenz attractor", Rect(128, 64, width, height)).front;
-w.userView.clearOnRefresh= false;
-w.background= Color.black;
-
+w.clearOnRefresh= false;
 world= RedWorld(RedVector3D[width, height, depth], maxVel:1);
 
 obj= RedObject(world, RedVector3D[1, 1, 1], size: 1);

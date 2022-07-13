@@ -6,8 +6,7 @@ cnt= 0;
 
 //--world
 w= RedWindow("distance lines", Rect(128, 64, width, height)).front;
-w.userView.clearOnRefresh= false;
-w.background= Color.black;
+w.clearOnRefresh= false;
 wgrav= RedVector2D[0, 0.001];
 world= RedWorld(RedVector2D[width, height], wgrav, 20, 0.5);	//dim,grav,maxvel,damp
 

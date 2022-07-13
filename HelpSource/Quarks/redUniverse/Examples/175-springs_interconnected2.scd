@@ -6,7 +6,7 @@
 s.waitForBoot{
 
 	var width= 640, height= 480, wgrav, w, world,
-	n= 18, mp, objs, sprs, syns, cent= RedVector2D[width/2, height/2];
+	n= 18, objs, sprs, syns, cent= RedVector2D[width/2, height/2];
 
 	//--synthesis
 	SynthDef(\imp2, {|out= 0, freq= 0, phase= 0, amp= 0, pan= 0|
@@ -18,7 +18,6 @@ s.waitForBoot{
 
 	//--world
 	w= RedWindow("springs interconnected2", Rect(128, 64, width, height), false).front;
-	mp= w.mouse;
 	wgrav= RedVector2D[0, 0];	//world xy gravity
 	world= RedWorld3(RedVector2D[width, height], wgrav, 999, 0);	//dim,grav,maxvel,damp
 
