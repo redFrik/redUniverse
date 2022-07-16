@@ -1,0 +1,15 @@
+CLASS:: RedVector4D
+SUMMARY:: a vector with four dimensions
+CATEGORIES:: Red>redUniverse
+RELATED:: Overviews/redUniverseExamplesOverview, Classes/RedVector, Classes/RedVector2D, Classes/RedVector3D, Classes/RedVector4D
+
+DESCRIPTION::
+This is an optimised version of link::Classes/RedVector::.
+
+EXAMPLES::
+
+CODE::
+a= RedVector4D[10, 20, 30, 40]
+b= RedVector4D[20, 30, 40, 50]
+a+b
+::

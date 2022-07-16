@@ -1,10 +1,10 @@
 CLASS:: RedVector3D
 SUMMARY:: a vector with three dimensions
 CATEGORIES:: Red>redUniverse
-RELATED:: Overviews/redUniverseExamplesOverview, Classes/RedVector, Classes/RedVector2D
+RELATED:: Overviews/redUniverseExamplesOverview, Classes/RedVector, Classes/RedVector2D, Classes/RedVector4D
 
 DESCRIPTION::
-This is an optimized version of link::Classes/RedVector::. It also adds the link::#-cross:: method.
+This is an optimised version of link::Classes/RedVector::. It also adds the link::#-cross:: method.
 
 INSTANCEMETHODS::
 

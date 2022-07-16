@@ -1,10 +1,10 @@
 CLASS:: RedVector2D
 SUMMARY:: a vector with two dimensions
 CATEGORIES:: Red>redUniverse
-RELATED:: Overviews/redUniverseExamplesOverview, Classes/RedVector, Classes/RedVector3D
+RELATED:: Overviews/redUniverseExamplesOverview, Classes/RedVector, Classes/RedVector3D, Classes/RedVector4D
 
 DESCRIPTION::
-This is an optimized version of link::Classes/RedVector::. It also adds the link::#-asPoint:: method.
+This is an optimised version of link::Classes/RedVector::. It also adds the link::#-asPoint:: method.
 
 INSTANCEMETHODS::
 

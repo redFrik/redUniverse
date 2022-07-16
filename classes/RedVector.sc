@@ -42,3 +42,15 @@ RedVector3D[float] : RedVector {
 	+ {|item, adverb| if(item.isNumber, {^RedVector3D[this[0]+item, this[1]+item, this[2]+item]}, {^this.performBinaryOp('+', item, adverb)})}
 	- {|item, adverb| if(item.isNumber, {^RedVector3D[this[0]-item, this[1]-item, this[2]-item]}, {^this.performBinaryOp('-', item, adverb)})}
 }
+
+//--4d vector optimised for speed
+RedVector4D[float] : RedVector {
+	mag {^(this[0].sumsqr(this[1])+this[2].sumsqr(this[3])).sqrt}
+	distance {|redVec| ^(redVec[0]-this[0]).hypot((redVec[1]-this[1]).hypot((redVec[2]-this[2]).hypot(redVec[3]-this[3])))}
+	manhattan {|redVec| ^(this[0]-redVec[0]).abs+(this[1]-redVec[1]).abs+(this[2]-redVec[2]).abs+(this[3]-redVec[3]).abs}
+	dot {|redVec| ^(this[0]*redVec[0])+(this[1]*redVec[1])+(this[2]*redVec[2])+(this[3]*redVec[3])}
+	* {|item, adverb| if(item.isNumber, {^RedVector4D[this[0]*item, this[1]*item, this[2]*item, this[3]*item]}, {^this.performBinaryOp('*', item, adverb)})}
+	/ {|item, adverb| if(item.isNumber, {^RedVector4D[this[0]/item, this[1]/item, this[2]/item, this[3]/item]}, {^this.performBinaryOp('/', item, adverb)})}
+	+ {|item, adverb| if(item.isNumber, {^RedVector4D[this[0]+item, this[1]+item, this[2]+item, this[3]+item]}, {^this.performBinaryOp('+', item, adverb)})}
+	- {|item, adverb| if(item.isNumber, {^RedVector4D[this[0]-item, this[1]-item, this[2]-item, this[3]-item]}, {^this.performBinaryOp('-', item, adverb)})}
+}
