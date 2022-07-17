@@ -2,7 +2,7 @@
 
 (
 var width= 640, height= 480, depth= 320, w, wgrav, world, n= 60,
-f= 1, s= 0.25;
+s= 1, f= 0.25;
 
 //--world
 w= RedWindow("boids 3d test", Rect(128, 64, width, height)).front;
@@ -30,7 +30,7 @@ w.draw{
 
 		//--render
 		Pen.strokeColor= Color.grey((depth-o.loc[2]/(depth*0.5)).clip(0, 1));
-		Pen.strokeOval(Rect.aboutRedObject3D(o, f, s));
+		Pen.strokeOval(Rect.aboutRedObject3D(o, s, f));
 	};
 };
 w.animate= true;

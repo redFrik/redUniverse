@@ -2,7 +2,7 @@
 
 (
 var width= 300, height= 300, depth= 300, w, wgrav, world, obj,
-ploc, f= 1, s= 0.1;
+ploc, s= 1, f= 0.1;
 
 //--world
 w= RedWindow("pendulum 3d", Rect(128, 64, width, height)).front;
@@ -24,7 +24,7 @@ w.draw{
 	a= obj;
 
 	//--render
-	ploc= Rect.aboutRedVector3D(obj.pendulumLoc3D, obj.size, width, height, depth, f, s);
+	ploc= Rect.aboutRedVector3D(obj.pendulumLoc3D, obj.size, width, height, depth, s, f);
 	Pen.fillOval(ploc);
 };
 w.animate= true;

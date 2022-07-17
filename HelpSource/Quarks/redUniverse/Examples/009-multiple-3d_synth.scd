@@ -4,7 +4,7 @@
 (
 s.waitForBoot{
 	var width= 300, height= 300, depth= 300, w, wgrav, world, n= 10,
-	ff= 1.25, ss= 0.25, synths;
+	ss= 1.25, ff= 0.25, synths;
 
 	//--synthesis
 	SynthDef("fm3Dtest", {|out= 0, t_trig= 0, amp= 0.1, dur= 0.1, freq= 400, pan= 0, freq2= 600|
@@ -34,9 +34,9 @@ s.waitForBoot{
 	//--loop
 	w.draw{
 		Pen.strokeColor= Color.grey(0.5);
-		Pen.strokeRect(Rect.aboutRedVector3D(RedVector[width/2, height/2, depth], width/2, width, height, depth, ff, ss));
+		Pen.strokeRect(Rect.aboutRedVector3D(RedVector[width/2, height/2, depth], width/2, width, height, depth, ss, ff));
 		Pen.strokeColor= Color.white;
-		Pen.strokeRect(Rect.aboutRedVector3D(RedVector[width/2, height/2, 0], width/2, width, height, depth, ff, ss));
+		Pen.strokeRect(Rect.aboutRedVector3D(RedVector[width/2, height/2, 0], width/2, width, height, depth, ss, ff));
 		world.objects.do{|o, i|
 			var flag= false, dep;
 			o.addForce(world.gravity);
@@ -58,7 +58,7 @@ s.waitForBoot{
 
 			//--render
 			Pen.fillColor= Color.grey(dep.clip(0, 1), 0.75);
-			Pen.fillOval(Rect.aboutRedObject3D(o, ff, ss));
+			Pen.fillOval(Rect.aboutRedObject3D(o, ss, ff));
 		};
 	};
 	w.animate= true;

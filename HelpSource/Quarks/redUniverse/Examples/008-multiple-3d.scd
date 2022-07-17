@@ -2,7 +2,7 @@
 
 (
 var width= 300, height= 300, depth= 300, w, wgrav, world, n= 60,
-f= 1.25, s= 0.25;
+s= 1.25, f= 0.25;
 
 //--world
 w= RedWindow("multi 3d test", Rect(128, 64, width, height)).front;
@@ -19,9 +19,9 @@ world= RedWorld3(RedVector3D[width, height, depth], wgrav, 20, 0.01);	//dim,grav
 //--loop
 w.draw{
 	Pen.strokeColor= Color.grey(0.5);
-	Pen.strokeRect(Rect.aboutRedVector3D(RedVector[width*0.5, height*0.5, depth], width*0.5, width, height, depth, f, s));
+	Pen.strokeRect(Rect.aboutRedVector3D(RedVector[width*0.5, height*0.5, depth], width*0.5, width, height, depth, s, f));
 	Pen.strokeColor= Color.white;
-	Pen.strokeRect(Rect.aboutRedVector3D(RedVector[width*0.5, height*0.5, 0], width*0.5, width, height, depth, f, s));
+	Pen.strokeRect(Rect.aboutRedVector3D(RedVector[width*0.5, height*0.5, 0], width*0.5, width, height, depth, s, f));
 	world.objects.do{|o|
 		o.addForce(world.gravity);
 		o.update;
@@ -29,7 +29,7 @@ w.draw{
 
 		//--render
 		Pen.strokeColor= Color.grey((depth-o.loc[2]/(depth*0.5)).clip(0, 1));
-		Pen.strokeRect(Rect.aboutRedObject3D(o, f, s));
+		Pen.strokeRect(Rect.aboutRedObject3D(o, s, f));
 	};
 };
 w.animate= true;
