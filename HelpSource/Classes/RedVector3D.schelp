@@ -12,8 +12,33 @@ METHOD:: cross
 Cross product.
 
 NOTE::
-This is unique for RedVector3D and is not implemented for link::Classes/RedVector:: and link::Classes/RedVector2D::.
+This is unique for RedVector3D and is not implemented for the other RedVector classes.
 ::
+
+METHOD:: matrixMul
+Matrix multiplication.
+
+CODE::
+RedVector3D[10, 20, 30].matrixMul(#[[0.5, 0, 0], [0, 0.5, 0], [0, 0, 0.5]])
+::
+
+NOTE::
+This is unique for RedVector3D and is not implemented for the other RedVector classes.
+::
+
+METHOD:: matrix2Mul
+Multiplication with a two row matrix.
+
+CODE::
+RedVector3D[10, 20, 30].matrix2Mul(#[[0.5, 0, 0], [0, 0.5, 0]])
+::
+
+NOTE::
+This is unique for RedVector3D and is not implemented for the other RedVector classes.
+::
+
+RETURNS::
+A link::Classes/RedVector2D::.
 
 EXAMPLES::
 

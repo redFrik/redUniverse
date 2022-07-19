@@ -1,0 +1,34 @@
+CLASS:: Red3DPoint
+SUMMARY:: 3D point
+CATEGORIES:: Red>redUniverse>shapes
+
+DESCRIPTION::
+A class for rotating and rendering a point in 3D.
+
+CLASSMETHODS::
+
+METHOD:: new
+Creates a new point.
+
+INSTANCEMETHODS::
+
+PRIVATE:: initRed3DPoint
+
+EXAMPLES::
+
+CODE::
+a= Red3DPoint(RedVector3D[0.25, 0, 0]);
+a.points;
+a.update;
+a.render(2, 100);
+a.renderedPoints;
+(
+UserView().front.animate_(true).drawFunc_{|u|
+	Pen.translate(75, 75);
+	a.rotation_(RedVector3D[0, u.frame*0.01, u.frame*0.05]);
+	a.update;
+	a.render;
+	a.draw;
+};
+)
+::

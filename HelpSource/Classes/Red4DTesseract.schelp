@@ -1,0 +1,34 @@
+CLASS:: Red4DTesseract
+SUMMARY:: hypercube
+CATEGORIES:: Red>redUniverse>shapes
+
+DESCRIPTION::
+A class for rotating and rendering a 4D-hypercube in 3D.
+
+CLASSMETHODS::
+
+METHOD:: new
+
+INSTANCEMETHODS::
+
+PRIVATE:: initRed4DTesseract
+
+EXAMPLES::
+
+CODE::
+a= Red4DTesseract();
+a.points;
+a.rotation_(RedVector[0, 0, 0, 0, 0, 0.2]);
+a.update;
+a.render;
+a.renderedPoints;
+(
+UserView().front.animate_(true).drawFunc_{|u|
+	Pen.translate(75, 75);
+	a.rotation_(RedVector[0, 0.5, 0, 0, 0, u.frame*0.01]);
+	a.update;
+	a.render(2, 100);
+	a.drawOutlines;
+};
+)
+::

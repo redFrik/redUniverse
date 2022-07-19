@@ -12,7 +12,7 @@ more info in the [lam06-handout.pdf](lam06-handout.pdf)
 
 ## changelog:
 
-* 220716 - added RedVector4
+* 220719 - added RedVector4, matrix multiplication and shape classes with examples
 * 220713 - refactor RedWindow once again and move out of scide_scqt folder
 * 211204 - added Lorenz attractor example and clear method for RedWindow
 * 210806 - added RedMandelbrot class

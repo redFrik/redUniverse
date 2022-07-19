@@ -1,0 +1,41 @@
+CLASS:: Red4D
+SUMMARY:: abstract 4D class
+CATEGORIES:: Red>redUniverse>shapes
+RELATED:: Classes/Red3D
+
+DESCRIPTION::
+An abstract class for 4D shape classes.
+
+CLASSMETHODS::
+
+INSTANCEMETHODS::
+
+PRIVATE:: initRed4D
+
+METHOD:: points
+An array of link::Classes/RedVector4D:: defining the corners of the shape.
+
+METHOD:: rotation
+Get or set the current rotation of the shape.
+
+ARGUMENT:: redVec
+A 6-dimensional link::Classes/RedVector::.
+
+METHOD:: rotationMatrices
+An array of 6 arrays each holding a 4-row matrix for the current rotation in X, Y, Z and W dimensions.
+
+METHOD:: position
+Get or set the current position of the shape as a link::Classes/RedVector4D::.
+
+METHOD:: vectors
+An array of link::Classes/RedVector4D::. This holds the current positions of all points (corners) after rotation is applied. This is calculated when calling link::#-update::.
+
+EXAMPLES::
+
+CODE::
+a= Red4DTesseract();
+a.points;
+a.update;
+a.render;
+a.renderedPoints;
+::

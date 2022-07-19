@@ -1,0 +1,96 @@
+CLASS:: Red3D
+SUMMARY:: abstract 3D class
+CATEGORIES:: Red>redUniverse>shapes
+RELATED:: Classes/Red4D
+
+DESCRIPTION::
+An abstract class for 3D shape classes.
+
+CLASSMETHODS::
+
+INSTANCEMETHODS::
+
+PRIVATE:: initRed3D
+
+METHOD:: points
+An array of link::Classes/RedVector3D:: defining the corners of the shape.
+
+METHOD:: outlines
+An array of arrays with pairs of indices defining connections between the points (corners) of the shape.
+
+METHOD:: surfaces
+An array or arrays with four indices defining the planes (rectangles) of the shape.
+
+METHOD:: position
+Get or set the current position of the shape as a link::Classes/RedVector3D::.
+
+METHOD:: rotation
+Get or set the current rotation of the shape.
+
+ARGUMENT:: redVec
+A link::Classes/RedVector3D::.
+
+METHOD:: rotationX
+Set the angle of rotation around the X axis.
+
+ARGUMENT:: theta
+In radians.
+
+METHOD:: rotationY
+Set the angle of rotation around the Y axis.
+
+ARGUMENT:: theta
+In radians.
+
+METHOD:: rotationZ
+Set the angle of rotation  around the Z axis.
+
+ARGUMENT:: theta
+In radians.
+
+METHOD:: rotationMatrices
+Returns an array of 3 arrays each holding a 3-row matrix for the current rotation in X, Y and Z dimensions. This is calculated when calling link::#-update::.
+
+METHOD:: vectors
+An array of link::Classes/RedVector3D::. This holds the current positions of all points (corners) after rotation. This is calculated when calling link::#-update::.
+
+METHOD:: renderedPoints
+An array of link::Classes/Point::s. This holds the current positions of all points (corners) after projection and scaling. This is calculated when calling link::#-render::.
+
+ARGUMENT:: dist
+Distance. A value lower than 2 exaggerate the depth.
+
+ARGUMENT:: size
+Scaling factor.
+
+METHOD:: update
+Call this to perform the rotation calculations. This updates the variable link::#-vectors::.
+
+METHOD:: render
+Call this to perform the projection and scaling calculations. This updates the variable link::#-rederedPoints::.
+
+METHOD:: draw
+Draws an oval at each point (in each corner). Must be called inside a draw function. Use code::Pen.fillColor_:: to set the color.
+
+ARGUMENT:: dotSize
+The size of the oval.
+
+METHOD:: drawOutlines
+Draws a line between each point (all edges). Must be called inside a draw function. Use code::Pen.strokeColor_:: to set the color, and code::Pen.width_:: to set the line thickness.
+
+METHOD:: drawSurfaces
+Draws a rectangle for each plane. Must be called inside a draw function. Use code::Pen.fillColor_:: to set the color.
+
+EXAMPLES::
+
+CODE::
+a= Red3DBox();
+a.points;
+a.outlines;
+a.surfaces;
+
+a.vectors;
+a.rotationX_(0.3)
+a.update;
+a.vectors;
+::

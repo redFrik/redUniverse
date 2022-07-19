@@ -41,6 +41,32 @@ RedVector3D[float] : RedVector {
 	/ {|item, adverb| if(item.isNumber, {^RedVector3D[this[0]/item, this[1]/item, this[2]/item]}, {^this.performBinaryOp('/', item, adverb)})}
 	+ {|item, adverb| if(item.isNumber, {^RedVector3D[this[0]+item, this[1]+item, this[2]+item]}, {^this.performBinaryOp('+', item, adverb)})}
 	- {|item, adverb| if(item.isNumber, {^RedVector3D[this[0]-item, this[1]-item, this[2]-item]}, {^this.performBinaryOp('-', item, adverb)})}
+	matrixMul {|matrix|
+		var m0, m1, m2;
+		#m0, m1, m2= matrix;
+		^RedVector3D[
+			(this[0]*m0[0])+(this[1]*m0[1])+(this[2]*m0[2]),
+			(this[0]*m1[0])+(this[1]*m1[1])+(this[2]*m1[2]),
+			(this[0]*m2[0])+(this[1]*m2[1])+(this[2]*m2[2])
+		];
+	}
+	matrix2Mul {|matrix|
+		var m0, m1;
+		#m0, m1= matrix;
+		^RedVector2D[
+			(this[0]*m0[0])+(this[1]*m0[1])+(this[2]*m0[2]),
+			(this[0]*m1[0])+(this[1]*m1[1])+(this[2]*m1[2])
+		];
+	}
+	project {|dist= 2|
+		var w= 1/(dist-this[2]);
+		var proj= [
+			[w, 0, 0],
+			[0, w, 0],
+			[0, 0, w]
+		];
+		^this.matrixMul(proj);
+	}
 }
 
 //--4d vector optimised for speed
@@ -53,4 +79,33 @@ RedVector4D[float] : RedVector {
 	/ {|item, adverb| if(item.isNumber, {^RedVector4D[this[0]/item, this[1]/item, this[2]/item, this[3]/item]}, {^this.performBinaryOp('/', item, adverb)})}
 	+ {|item, adverb| if(item.isNumber, {^RedVector4D[this[0]+item, this[1]+item, this[2]+item, this[3]+item]}, {^this.performBinaryOp('+', item, adverb)})}
 	- {|item, adverb| if(item.isNumber, {^RedVector4D[this[0]-item, this[1]-item, this[2]-item, this[3]-item]}, {^this.performBinaryOp('-', item, adverb)})}
+	matrixMul {|matrix|
+		var m0, m1, m2, m3;
+		#m0, m1, m2, m3= matrix;
+		^RedVector4D[
+			(this[0]*m0[0])+(this[1]*m0[1])+(this[2]*m0[2])+(this[3]*m0[3]),
+			(this[0]*m1[0])+(this[1]*m1[1])+(this[2]*m1[2])+(this[3]*m1[3]),
+			(this[0]*m2[0])+(this[1]*m2[1])+(this[2]*m2[2])+(this[3]*m2[3]),
+			(this[0]*m3[0])+(this[1]*m3[1])+(this[2]*m3[2])+(this[3]*m3[3])
+		];
+	}
+	matrix3Mul {|matrix|
+		var m0, m1, m2;
+		#m0, m1, m2= matrix;
+		^RedVector3D[
+			(this[0]*m0[0])+(this[1]*m0[1])+(this[2]*m0[2])+(this[3]*m0[3]),
+			(this[0]*m1[0])+(this[1]*m1[1])+(this[2]*m1[2])+(this[3]*m1[3]),
+			(this[0]*m2[0])+(this[1]*m2[1])+(this[2]*m2[2])+(this[3]*m2[3])
+		];
+	}
+	project {|dist= 2|
+		var w= 1/(dist-this[3]);
+		var proj= [
+			[w, 0, 0, 0],
+			[0, w, 0, 0],
+			[0, 0, w, 0],
+			[0, 0, 0, w]
+		];
+		^this.matrixMul(proj);
+	}
 }

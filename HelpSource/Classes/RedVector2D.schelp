@@ -12,7 +12,7 @@ METHOD:: asPoint
 Return a link::Classes/Point::.
 
 NOTE::
-This is unique for RedVector2D and is not implemented for link::Classes/RedVector:: and link::Classes/RedVector3D::.
+This is unique for RedVector2D and is not implemented for the other RedVector classes.
 ::
 
 EXAMPLES::
