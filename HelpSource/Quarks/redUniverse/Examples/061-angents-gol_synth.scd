@@ -86,7 +86,7 @@ s.waitForBoot{
 			Pen.fillOval(Rect.aboutRedObject2D(o));
 		};
 	};
-	w.animate= true;
+	w.play;
 	CmdPeriod.doOnce({w.close});
 	w.onClose= {synths.do{|x| x.free}};
 })

@@ -109,7 +109,7 @@ s.waitForBoot{
 		};
 		//human.state.freq.postln;
 	};
-	w.animate= true;
+	w.play;
 	CmdPeriod.doOnce({w.close});
 	w.onClose= {
 		syn.free;

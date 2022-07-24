@@ -37,6 +37,6 @@ w.draw{
 	Pen.drawImage(Point(0, 0), img);
 };
 img.interpolation= \fast;
-w.animate= true;
+w.play;
 CmdPeriod.doOnce({img.free; w.close});
 )

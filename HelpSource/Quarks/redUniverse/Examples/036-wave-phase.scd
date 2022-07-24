@@ -42,6 +42,6 @@ w.draw{
 		Pen.fillOval(Rect.aboutRedVector2D(o.loc, i.linexp(0, n, 1, n)+5));
 	};
 };
-w.animate= true;
+w.play;
 CmdPeriod.doOnce({w.close});
 )

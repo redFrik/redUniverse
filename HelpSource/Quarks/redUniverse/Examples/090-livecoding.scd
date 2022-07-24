@@ -24,7 +24,7 @@ wgrav= RedVector2D[-0.4, 0.98];
 	};
 	//Pen.strokeRect(Rect.aboutRedVector2D(~win.mouse, 10));
 };
-~win.animate= true;
+~win.play;
 CmdPeriod.doOnce({~win.close});
 )
 

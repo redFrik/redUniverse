@@ -27,7 +27,7 @@ w.draw{
 
 	dead.do{|o| world.remove(o)};
 };
-w.animate= true;
+w.play;
 CmdPeriod.doOnce({w.close});
 )
 

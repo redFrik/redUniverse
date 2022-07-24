@@ -36,7 +36,7 @@ w.draw{
 		obj.size*(obj.loc[2]/(depth*0.25)), *[width, height, depth].at(~order)
 	));
 };
-w.animate= true;
+w.play;
 CmdPeriod.doOnce({w.close});
 ~win= w;
 )

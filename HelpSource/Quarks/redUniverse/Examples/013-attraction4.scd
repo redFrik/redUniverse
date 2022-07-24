@@ -36,6 +36,6 @@ w.draw{
 		Pen.fillRect(Rect.aboutPoint(o.loc.asPoint, 0.5, 0.5));
 	};
 };
-w.animate= true;
+w.play;
 CmdPeriod.doOnce({w.close});
 )

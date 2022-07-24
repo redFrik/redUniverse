@@ -33,6 +33,6 @@ w.draw{
 		Pen.strokeOval(Rect.aboutRedObject3D(o, s, f));
 	};
 };
-w.animate= true;
+w.play;
 CmdPeriod.doOnce({w.close});
 )

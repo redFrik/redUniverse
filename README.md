@@ -12,6 +12,7 @@ more info in the [lam06-handout.pdf](lam06-handout.pdf)
 
 ## changelog:
 
+* 220724 - improve RedWindow timing for smoother drawing and adapted examples
 * 220719 - added RedVector4, matrix multiplication and shape classes with examples
 * 220713 - refactor RedWindow once again and move out of scide_scqt folder
 * 211204 - added Lorenz attractor example and clear method for RedWindow

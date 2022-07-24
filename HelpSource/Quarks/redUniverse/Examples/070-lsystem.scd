@@ -28,6 +28,6 @@ w.draw{
 	Pen.translate(width*0.5, height*0.8);
 	lplot.draw;
 };
-w.animate= true;
+w.play;
 CmdPeriod.doOnce({w.close});
 )

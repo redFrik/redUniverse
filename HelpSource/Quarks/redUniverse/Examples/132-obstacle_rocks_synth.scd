@@ -88,7 +88,7 @@ s.waitForBoot{
 		}
 		*/
 	};
-	w.animate= true;
+	w.play;
 	CmdPeriod.doOnce({w.close});
 }
 )

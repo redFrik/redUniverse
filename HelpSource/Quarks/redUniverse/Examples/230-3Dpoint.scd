@@ -19,6 +19,6 @@ w.draw{
 	Pen.fillColor= Color.white;
 	point.draw(12);  //dotSize
 };
-w.animate= true;
+w.play;
 CmdPeriod.doOnce({w.close});
 )

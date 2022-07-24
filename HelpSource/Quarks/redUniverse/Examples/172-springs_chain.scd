@@ -51,6 +51,6 @@ w.draw{
 	Pen.fillColor= Color.red;
 	Pen.fillOval(Rect.aboutRedObject2D(trg));
 };
-w.animate= true;
+w.play;
 CmdPeriod.doOnce({w.close});
 )

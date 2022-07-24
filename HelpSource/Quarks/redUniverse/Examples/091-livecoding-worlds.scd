@@ -41,7 +41,7 @@ wgrav= RedVector2D[0, 0];
 		Pen.fillOval(Rect.aboutRedObject2D(o));
 	};
 };
-~win.animate= true;
+~win.play;
 CmdPeriod.doOnce({~win.close});
 )
 

@@ -68,7 +68,7 @@ s.waitForBoot{
 		};
 		Pen.fill;
 	};
-	w.animate= true;
+	w.play;
 	CmdPeriod.doOnce({w.close});
 }
 )

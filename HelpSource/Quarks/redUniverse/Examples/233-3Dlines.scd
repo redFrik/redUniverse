@@ -41,6 +41,6 @@ w.draw{
 		};
 	};
 };
-w.animate= true;
+w.play;
 CmdPeriod.doOnce({w.close});
 )

@@ -23,6 +23,6 @@ w.draw{
 	Pen.strokeColor= Color.white;
 	hypercube.drawOutlines;
 };
-w.animate= true;
+w.play;
 CmdPeriod.doOnce({w.close});
 )

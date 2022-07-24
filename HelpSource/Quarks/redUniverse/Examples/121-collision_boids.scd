@@ -38,6 +38,6 @@ w.draw{
 		Pen.fillOval(Rect.aboutRedObject2D(o));
 	};
 };
-w.animate= true;
+w.play;
 CmdPeriod.doOnce({w.close});
 )

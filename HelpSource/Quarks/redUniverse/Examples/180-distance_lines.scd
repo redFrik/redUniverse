@@ -38,6 +38,6 @@ w.draw{
 	minDist= minDist*(sin(cnt/25)*0.02+1);
 	cnt= cnt+1;
 };
-w.animate= true;
+w.play;
 CmdPeriod.doOnce({w.close});
 )

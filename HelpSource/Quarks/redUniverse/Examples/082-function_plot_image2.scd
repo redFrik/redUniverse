@@ -38,6 +38,6 @@ w.draw{
 	Pen.drawImage(Rect(0, 0, width, height), img);
 };
 img.interpolation= \smooth;
-w.animate= true;
+w.play;
 CmdPeriod.doOnce({img.free; w.close});
 )

@@ -22,6 +22,6 @@ w.draw{
 	Pen.fillColor= Color.white;
 	box.draw;
 };
-w.animate= true;
+w.play;
 CmdPeriod.doOnce({w.close});
 )

@@ -44,6 +44,9 @@ If the window is updating.
 METHOD:: clear
 Clear the internal link::Classes/UserView:: once. Useful when drawing with the code::clearOnRefresh:: flag set to false.
 
+METHOD:: userView
+NOTE:: DEPRECATED::
+
 EXAMPLES::
 
 CODE::
@@ -62,13 +65,12 @@ w.draw{
 	Pen.fillOval(Rect.aboutRedVector2D(w.mouse, radius))
 }
 )
-w.play(25)	//25fps
+w.play
 w.mouse
 w.isPlaying
 w.isOpen
-w.stop
-w.animate= true;	//60fps
 w.frame
 w.frameRate
+w.stop
 w.close
 ::

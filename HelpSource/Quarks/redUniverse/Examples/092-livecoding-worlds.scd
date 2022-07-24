@@ -46,7 +46,7 @@ RedUniverse.clear;
 		Pen.fillOval(Rect.aboutRedObject2D(o));
 	};
 };
-~win.animate= true;
+~win.play;
 CmdPeriod.doOnce({~win.close});
 )
 

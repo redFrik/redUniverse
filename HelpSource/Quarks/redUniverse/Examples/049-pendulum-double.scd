@@ -56,7 +56,7 @@ w.draw{
 	Pen.stroke;
 	o= world.objects;
 };
-w.animate= true;
+w.play;
 CmdPeriod.doOnce({w.close});
 )
 

@@ -1,7 +1,7 @@
 // this file is part of redUniverse toolkit /redFrik
 
 RedWindow : SCViewHolder {
-	var <>mouse, <isPlaying= false, updateMouseFunc;
+	var <>mouse, <isPlaying= false, updateMouseFunc, playFrame, frameDur;
 	*new {|name= "redWindow", bounds|
 		^super.new.initRedWindow(name, bounds)
 	}
@@ -15,15 +15,22 @@ RedWindow : SCViewHolder {
 		.mouseMoveAction_(updateMouseFunc);
 	}
 	draw {|func| view.drawFunc= func}
-	play {|fps= 40|
+	play {|fps= 60|
 		isPlaying= true;
+		playFrame= 0;
 		{
+			var nextTime= 0;
 			while({isPlaying and:{view.isClosed.not}}, {
+				nextTime= Main.elapsedTime+(1/fps);
 				view.refresh;
-				fps.reciprocal.wait;
+				playFrame= playFrame+1;
+				frameDur= (nextTime-Main.elapsedTime).max(0.001);
+				frameDur.wait;
 			});
 		}.fork(AppClock);
 	}
+	frame {^playFrame?view.frame}
+	frameRate {^if(frameDur.notNil, {1/frameDur}, {view.frameRate})}
 	stop {isPlaying= false}
 	resize {|redVec|
 		view.bounds= Rect(view.bounds.left, view.bounds.top, redVec[0], redVec[1]);

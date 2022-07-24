@@ -46,6 +46,6 @@ w.draw{
 	Pen.strokeColor= Color.yellow;
 	Pen.strokeRect(Rect(att.loc[0]-1, 0, 2, height));
 };
-w.animate= true;
+w.play;
 CmdPeriod.doOnce({w.close});
 )

@@ -30,6 +30,6 @@ w.draw{
 	Pen.strokeColor= Color.white;
 	Pen.strokeRect(Rect.aboutRedObject2D(obj));
 };
-w.animate= true;
+w.play;
 CmdPeriod.doOnce({w.close});
 )

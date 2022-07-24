@@ -27,7 +27,7 @@ w.draw{
 	ploc= Rect.aboutRedVector3D(obj.pendulumLoc3D, obj.size, width, height, depth, s, f);
 	Pen.fillOval(ploc);
 };
-w.animate= true;
+w.play;
 CmdPeriod.doOnce({w.close});
 )
 
