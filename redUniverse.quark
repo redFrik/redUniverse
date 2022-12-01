@@ -3,9 +3,9 @@
 	\path:		"redUniverse",
 	\summary:	"a simple toolkit for sonification and visualisation of dynamic systems",
 	\author:		"redFrik",
-	\schelp:		"redUniverseExamplesOverview",
+	\schelp:		"Overviews/redUniverseExamplesOverview",
 	\url:			"https://www.fredrikolofsson.com/",
-	\version:		"1.76",
+	\version:		"1.77",
 	\since:			"2006",
 	\isCompatible:	{Main.versionAtLeast(3,6)}
 )
