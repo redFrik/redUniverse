@@ -28,8 +28,10 @@ RedObject {
 	}
 	addForce {|force| accel= accel+(force/mass)}
 	gravityForce {|redObj|
-		var dir= redObj.loc-loc;
-		var dist= dir.mag;
+		var dir, dist;
+		if(redObj==this, {^0});
+		dir= redObj.loc-loc;
+		dist= dir.mag;
 		^dir*(world.gravity.mag*mass*redObj.mass/(dist*dist))
 	}
 	frictionForce {|constant| ^vel.normalize*constant}	//watch out for NaN here if vel is zero
