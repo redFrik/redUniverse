@@ -1,0 +1,59 @@
+CLASS:: RedOscillator2
+SUMMARY:: doubly coupled oscillator
+CATEGORIES:: Red>redUniverse
+RELATED:: Overviews/redUniverseExamplesOverview, Classes/RedOscillator
+
+DESCRIPTION::
+See https://www.complexity-explorables.org/explorables/janus-bunch/
+
+INSTANCEMETHODS::
+
+METHOD:: freq2
+Get or set the second frequency.
+
+METHOD:: phase2
+Get or set the second phase (theta) in radians.
+
+METHOD:: amp2
+Get or set the second amplitude.
+
+NOTE::
+Not really used in the oscillator. Just a useful placeholder.
+::
+
+METHOD:: internalCoupling
+Strength (scale) of the phase influence internally.
+
+METHOD:: delta2
+Get the second delta phase i.e. current phase speed.
+
+METHOD:: couple
+Apply influence from two other oscillator's phase (normally left and right when connected in a ring). Call this before each LINK::#-update::.
+
+ARGUMENT:: prev
+The EMPHASIS::left:: LINK::Classes/RedOscillator2:: instance.
+
+ARGUMENT:: next
+The EMPHASIS::right:: LINK::Classes/RedOscillator2:: instance.
+
+METHOD:: update
+Calculate new phases (phase and phase2) as well as speeds (delta and delta2). Always call LINK::#-couple:: before this.
+
+EXAMPLES::
+
+CODE::
+a= RedWorld.new
+b= RedOscillator2(a);
+c= RedOscillator2(a);
+d= RedOscillator2(a);
+
+a.objects
+
+(
+a.objects.do{|o, i|
+	o.couple(a.objects.wrapAt(i-1), a.objects.wrapAt(i+1))
+};
+)
+c.update
+c.dump
+::

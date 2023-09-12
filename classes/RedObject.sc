@@ -204,3 +204,42 @@ RedFood : RedObject {
 	}
 	alive {^energy>0}
 }
+
+//--an object with a frequency and a phase that can be influenced
+RedOscillator : RedObject {
+	var	<>freq= 0,
+		<>phase= 0,
+		<>amp= 1,
+		<>coupling= 0.01,
+		<delta,
+		sum= 0;
+	couple {|osc|
+		sum= sum+(coupling*sin(osc.phase-phase));
+	}
+	update {
+		delta= freq+sum;
+		phase= phase+delta;
+		sum= 0;
+		super.update;
+	}
+}
+
+//--an object with two frequencies and two phases that can be influenced
+RedOscillator2 : RedOscillator {
+	var	<>freq2= 0,
+		<>phase2= 0,
+		<>amp2= 1,
+		<>internalCoupling= 0.03,
+		<delta2,
+		sum2= 0;
+	couple {|prev, next|
+		sum= sum+(internalCoupling*sin(phase2-phase))+(coupling*sin(prev.phase2-phase));
+		sum2= sum2+(internalCoupling*sin(phase-phase2))+(coupling*sin(next.phase-phase2));
+	}
+	update {
+		delta2= freq2+sum2;
+		phase2= phase2+delta2;
+		sum2= 0;
+		super.update;
+	}
+}

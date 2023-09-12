@@ -94,6 +94,10 @@ list::
 ## link::Quarks/redUniverse/Examples/238-4Dhypercube.scd::
 ## link::Quarks/redUniverse/Examples/239-4Dhypercubes.scd::
 ## link::Quarks/redUniverse/Examples/250-extra_params.scd::
+## link::Quarks/redUniverse/Examples/260-oscillators.scd::
+## link::Quarks/redUniverse/Examples/261-oscillators_clocks.scd::
+## link::Quarks/redUniverse/Examples/264-janus_bunch.scd::
+## link::Quarks/redUniverse/Examples/265-janus_bunch_clocks.scd::
 ::
 
 table::
@@ -101,7 +105,7 @@ table::
 ## link::Classes/RedVector:: || vector of any dimension
 ## link::Classes/RedVector2D::, link::Classes/RedVector3D::, link::Classes/RedVector4D:: || optimised vector objects of specific dimensions
 ## link::Classes/RedSpring:: || helper class for keeping track of springs
-## link::Classes/RedUniverse::, link::Classes/RedWorld::, link::Classes/RedObject::, link::Classes/RedPendulum::, link::Classes/RedAgent::, link::Classes/RedHiddenObject::, link::Classes/RedFood::, link::Classes/RedRock::, link::Classes/RedBoid::, link::Classes/RedParticle:: || fundamental objects in the redUniverse toolkit
+## link::Classes/RedUniverse::, link::Classes/RedWorld::, link::Classes/RedObject::, link::Classes/RedPendulum::, link::Classes/RedAgent::, link::Classes/RedHiddenObject::, link::Classes/RedFood::, link::Classes/RedRock::, link::Classes/RedBoid::, link::Classes/RedParticle::, link::Classes/RedOscillator::, link::Classes/RedOscillator2:: || fundamental objects in the redUniverse toolkit
 ## link::Classes/Red3D::, link::Classes/Red3DBox::, link::Classes/Red3DLine::, link::Classes/Red3DPlane::, link::Classes/Red3DPoint::, link::Classes/Red4D::, link::Classes/Red4DTesseract:: || graphical shapes
 ## link::Classes/RedFingerprint::, link::Classes/RedIFS::, link::Classes/RedKMeans::, link::Classes/RedLSystem::, link::Classes/RedLTurtle::, link::Classes/RedMandelbrot::, link::Classes/RedMRCM::, link::Classes/RedPerlin:: || additional classes
 ::
