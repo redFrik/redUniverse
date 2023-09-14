@@ -12,6 +12,7 @@ more info in the [lam06-handout.pdf](lam06-handout.pdf)
 
 ## changelog:
 
+* 230914 - added one discrete world example
 * 230912 - added RedOscillator and RedOscillator2 - thanks g. moon
 * 230901 - safety check in RedObject gravityForce, added an example
 * 220724 - improve RedWindow timing for smoother drawing and adapted examples
