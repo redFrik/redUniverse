@@ -1,11 +1,11 @@
-//discrete world - 2d ca
+//discrete world - 2d ca optimised
 
 (
-var width= 640, height= 480, w, wgrav, world, n= 15,
-wx= width/n, hy= height/n;
+var width= 640, height= 480, w, wgrav, world, n= 30,
+wx= width/n, hy= height/n, lookup;
 
 //--world
-w= RedWindow("discrete world - 2d ca", Rect(128, 64, width, height)).front;
+w= RedWindow("discrete world - 2d ca optimised", Rect(128, 64, width, height)).front;
 world= RedWorld3(RedVector[n, n]);	//dim,grav,maxvel,damp
 
 //--objects
@@ -15,15 +15,17 @@ world= RedWorld3(RedVector[n, n]);	//dim,grav,maxvel,damp
 		RedAgent(world, loc).state_(0.25.coin.binaryValue);	//world,loc,vel,acc,mass,size
 	}.dup(n);
 }.dup(n);
+lookup= IdentityDictionary(world.objects.size);
+world.objects.do{|o| lookup.put(o, world.neighbours(o))};  //heavy calculation
 
 //--loop
 w.draw{
 	var counts= world.objects.collect{|o|
-		world.neighbours(o).sum{|oo| oo.state}
+		lookup.at(o).sum{|oo| oo.state}
 	};
 	world.objects.do{|o, i|
 		if(o.state==1, {
-			Pen.addRect(Rect(o.loc[0]*wx, o.loc[1]*hy, wx, hy));
+			Pen.addRect(Rect(o.loc[0]*wx, o.loc[1]*hy, wx-1, hy-1));
 		});
 		if(counts[i]==3, {
 			o.state= 1;
@@ -35,8 +37,8 @@ w.draw{
 	};
 
 	Pen.smoothing_(false);
-	Pen.strokeColor_(Color.white);
-	Pen.stroke;
+	Pen.fillColor_(Color.white);
+	Pen.fill;
 };
 w.play;
 CmdPeriod.doOnce({w.close});
