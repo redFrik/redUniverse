@@ -12,6 +12,7 @@ more info in the [lam06-handout.pdf](lam06-handout.pdf)
 
 ## changelog:
 
+* 240103 - added springs coupled example
 * 230914 - added one discrete world example, optimised RedWorld neighbours
 * 230912 - added RedOscillator and RedOscillator2 - thanks g. moon
 * 230901 - safety check in RedObject gravityForce, added an example
