@@ -66,6 +66,18 @@ A scalar. How hard it will be to move this object around. Used for gravity force
 METHOD:: size
 A scalar. The distance from location to the outer border i.e. radius. Used for contains and rendering.
 
+METHOD:: spring
+See link::Classes/RedSpring::
+
+METHOD:: barycenter
+Location of the center of mass between this and another red object.
+
+ARGUMENT:: redObj
+Another red object.
+
+RETURNS::
+A link::Classes/RedVector::.
+
 EXAMPLES::
 
 CODE::

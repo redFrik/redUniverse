@@ -52,6 +52,12 @@ RedObject {
 		this.addForce((targetLoc-loc)*stiffness);
 		vel= vel*damping;
 	}
+	barycenter {|redObj|
+		var dir, dist;
+		dir= loc-redObj.loc;
+		dist= dir.mag/(1+(mass/redObj.mass));
+		^loc-(dir.normalize*dist)
+	}
 	contains {|redObj| ^loc.distance(redObj.loc)<(size+redObj.size)}
 	containsLoc {|aLoc| ^loc.distance(aLoc)<size}
 	collide {|redObj, safety= 3|

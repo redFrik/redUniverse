@@ -19,7 +19,7 @@ RedWindow : SCViewHolder {
 		isPlaying= true;
 		playFrame= 0;
 		{
-			var nextTime= 0;
+			var nextTime;
 			while({isPlaying and:{view.isClosed.not}}, {
 				nextTime= Main.elapsedTime+(1/fps);
 				view.refresh;
